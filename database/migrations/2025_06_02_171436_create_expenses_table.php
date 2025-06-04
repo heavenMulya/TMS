@@ -12,7 +12,7 @@ return new class extends Migration
 public function up()
 {
     Schema::create('expenses', function (Blueprint $table) {
-        $table->integer('id')->primary(); // INT(11) NOT NULL
+        $table->id();
 
         $table->string('title', 100)->nullable(); // VARCHAR(100) DEFAULT NULL
         $table->decimal('amount', 10, 2)->nullable(); // DECIMAL(10,2) DEFAULT NULL

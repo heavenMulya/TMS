@@ -50,7 +50,7 @@ class paymentManagementController extends Controller
      // return (new JSONResponseResource(true,200,'payments Data Saved Successfully',$payments))->response();
       return (new JSONResponseResource(true, 200, 'Payment saved successfully', [
         'payment' => $payments,
-        'receipt_url' => route('receipts.print', $payments->id)
+        'receipt_url' => route('payment.receipt', $payments->id)
     ]))->response();
     }
     catch(\Exception $e)
