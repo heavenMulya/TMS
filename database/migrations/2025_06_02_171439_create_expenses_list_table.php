@@ -12,7 +12,7 @@ return new class extends Migration
    public function up()
 {
     Schema::create('expenses_list', function (Blueprint $table) {
-        $table->integer('id')->nullable(); // INT(11) DEFAULT NULL
+        $table->id(); 
         $table->string('name', 255);       // VARCHAR(255) NOT NULL
     });
 }

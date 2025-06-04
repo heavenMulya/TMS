@@ -16,6 +16,7 @@ class ExpenseListSeeder extends Seeder
         DB::table('expenses_list')->insert([
             ['name' => 'Elictricity'],
             ['name' => "Water Bill\r\n"],
+            ['name' => 'Elictricity2'],
         ]);
     }
 }
