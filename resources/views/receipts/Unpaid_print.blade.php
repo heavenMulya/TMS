@@ -95,10 +95,10 @@
     @foreach ($data as $data)
         <tr>
             <td>{{ $counter++ }}</td> {{-- This counts 1, 2, 3... --}}
-            <td>{{ $data->this_month->data->full_name }}</td>
-            <td>{{ $data->this_month->data->phone ?? 'No description' }}</td>
-            <td>{{ $data->this_month->data->email }}</td>
-            <td>{{ $data->this_month->data->id_number }}</td>
+            <td>{{ $data->full_name }}</td>
+            <td>{{ $data->phone ?? 'No description' }}</td>
+            <td>{{ $data->email }}</td>
+            <td>{{ $data->id_number }}</td>
               <td>Unpaid</td>
         </tr>
     @endforeach
