@@ -56,7 +56,7 @@ class dashboardReport extends Controller
     ];
 
     return (new JSONResponseResource(true, 200, 'Unpaid tenants fetched', $data))->response();
-    return view('receipts.Unpaid_print', ['data' => $data]);
+    //return view('receipts.Unpaid_print', ['data' => $data]);
 }
 
 

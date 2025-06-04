@@ -104,9 +104,7 @@ a {
                   <a href="#" data-bs-toggle="modal" data-bs-target="#addpaymentModal" class="btn btn-add">
         <i class="bx bx-plus me-1"></i> Add New
     </a>   
-          <a href="https://tms-production-65c4.up.railway.app/api/payment/receipt"  class="btn btn-add">
-         <i class="bx bx-printer font-size-18"></i> View All
-    </a>   
+       
                 <div>
    
 </div>
@@ -293,7 +291,7 @@ $(document).ready(function(){
   
   $.ajax({
                 method:'GET',
-                url:'https://tms-production-65c4.up.railway.app/api/tenant/getAll',
+                url:'https://tms-portal.up.railway.app/api/tenant/getAll',
                 dataType:'json',
                 success:function(response){
     let tenant_id_select=$('#tenant_id');
@@ -330,7 +328,7 @@ $(document).ready(function(){
   console.log(formData)
   $.ajax({
             method:'POST',
-            url:'https://tms-production-65c4.up.railway.app/api/payment/save',
+            url:'https://tms-portal.up.railway.app/api/payment/save',
             dataType:'json',
             headers:{
                 'Content-Type':'application/json'
@@ -343,7 +341,7 @@ $(document).ready(function(){
                 setTimeout(function(){
                     $('#success-alert').hide();
                 },3000);
-               location.reload();
+               //location.reload();
 
                //updateRoomStatus(room_ids)
                window.open(response.data.receipt_url, '_blank');
@@ -383,7 +381,7 @@ $(document).ready(function(){
 
     $.ajax({
         method: 'PUT', 
-        url: `https://tms-production-65c4.up.railway.app/api/payment/update/${id}`,
+        url: `https://tms-portal.up.railway.app/api/payment/update/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(formData),
@@ -420,7 +418,7 @@ $('#confirmDeleteBtn').click(function (e) {
 
     $.ajax({
         method: 'DELETE', 
-        url: `https://tms-production-65c4.up.railway.app/api/payment/delete/${id}`,
+        url: `https://tms-portal.up.railway.app/api/payment/delete/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         success: function (response) {
@@ -492,7 +490,7 @@ function updateRoomStatus(id)
     console.log('updateRoomStatus')
     $.ajax({
         method: 'PUT', 
-        url: `https://tms-production-65c4.up.railway.app/api/room/updatestatus/${id}`,
+        url: `https://tms-portal.up.railway.app/api/room/updatestatus/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         success: function (response) {
@@ -508,7 +506,7 @@ function loadpayment(page = 1)
  
   $.ajax({
             method:'GET',
-            url:`https://tms-production-65c4.up.railway.app/api/payment/get?page=${page}`,
+            url:`https://tms-portal.up.railway.app/api/payment/get?page=${page}`,
             dataType:'json',
             success:function(response){
             
@@ -551,7 +549,7 @@ function loadpayment(page = 1)
         </li>
 
          <li class="list-inline-item">
-        <a href="https://tms-production-65c4.up.railway.app/api/payment/receipt/${details.id}" 
+        <a href="https://tms-portal.up.railway.app/api/payment/receipt/${details.id}" 
            target="_blank" 
            class="px-2 text-primary" 
            title="Print Receipt">

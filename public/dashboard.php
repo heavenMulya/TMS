@@ -207,7 +207,7 @@ a {
                   <div class="card-body">
                     <div class="d-sm-flex align-items-center mb-4">
                       <h4 class="card-title mb-sm-0">Unpaid Tenants Lists</h4>
-                      <a href="https://tms-production-65c4.up.railway.app/api/report/receipt" class=" btn btn-success text-dark ms-auto mb-3 mb-sm-0"> View all Products</a>
+                      <a href="https://tms-portal.up.railway.app/api/report/receipt" class=" btn btn-success text-dark ms-auto mb-3 mb-sm-0"> View all Products</a>
                     </div>
                     <div class="table-responsive">
                     <table class="table project-list-table table-nowrap align-middle table-borderless">
@@ -267,7 +267,7 @@ a {
       {
         $.ajax({
             method:'GET',
-            url:`https://tms-production-65c4.up.railway.app/api/report/getRoomCounts`,
+            url:`https://tms-portal.up.railway.app/api/report/getRoomCounts`,
             dataType:'json',
             success:function(response){
               $('#total_room').text(response.data.total_rooms)
@@ -286,7 +286,7 @@ a {
        // console.log('work')
   $.ajax({
             method:'GET',
-            url:`https://tms-production-65c4.up.railway.app/api/report/getUnpaidTenants?page=${page}`,
+            url:`https://tms-portal.up.railway.app/api/report/getUnpaidTenants?page=${page}`,
             dataType:'json',
             success:function(response){
               console.log(response.data.data)
@@ -363,7 +363,7 @@ a {
       {
         $.ajax({
             method:'GET',
-            url:`https://tms-production-65c4.up.railway.app/api/report/getTenantCounts`,
+            url:`https://tms-portal.up.railway.app/api/report/getTenantCounts`,
             dataType:'json',
             success:function(response){
               $('#tenant').text(response.data)
@@ -378,7 +378,7 @@ a {
       {
         $.ajax({
             method:'GET',
-            url:`https://tms-production-65c4.up.railway.app/api/report/getTotalPaymentExpenses`,
+            url:`https://tms-portal.up.railway.app/api/report/getTotalPaymentExpenses`,
             dataType:'json',
             success:function(response){
               console.log(response)

@@ -302,7 +302,7 @@ $(document).ready(function(){
   
   $.ajax({
                 method:'GET',
-                url:'https://tms-production-65c4.up.railway.app/api/room/getAll',
+                url:'https://tms-portal.up.railway.app/api/room/getAll',
                 dataType:'json',
                 success:function(response){
     let room_id_select=$('#room_id');
@@ -341,7 +341,7 @@ $(document).ready(function(){
   console.log(formData)
   $.ajax({
             method:'POST',
-            url:'https://tms-production-65c4.up.railway.app/api/tenant/save',
+            url:'https://tms-portal.up.railway.app/api/tenant/save',
             dataType:'json',
             headers:{
                 'Content-Type':'application/json'
@@ -395,7 +395,7 @@ $(document).ready(function(){
 
     $.ajax({
         method: 'PUT', 
-        url: `https://tms-production-65c4.up.railway.app/api/tenant/update/${id}`,
+        url: `https://tms-portal.up.railway.app/api/tenant/update/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(formData),
@@ -432,7 +432,7 @@ $('#confirmDeleteBtn').click(function (e) {
 
     $.ajax({
         method: 'DELETE', 
-        url: `https://tms-production-65c4.up.railway.app/api/tenant/delete/${id}`,
+        url: `https://tms-portal.up.railway.app/api/tenant/delete/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         success: function (response) {
@@ -505,7 +505,7 @@ function updateRoomStatus(id)
     console.log('updateRoomStatus')
     $.ajax({
         method: 'PUT', 
-        url: `https://tms-production-65c4.up.railway.app/api/room/updatestatus/${id}`,
+        url: `https://tms-portal.up.railway.app/api/room/updatestatus/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         success: function (response) {
@@ -522,7 +522,7 @@ function loadtenants(page = 1)
  
   $.ajax({
             method:'GET',
-            url:`https://tms-production-65c4.up.railway.app/api/tenant/get?page=${page}`,
+            url:`https://tms-portal.up.railway.app/api/tenant/get?page=${page}`,
             dataType:'json',
             success:function(response){
               let tbody=$('#tbody');

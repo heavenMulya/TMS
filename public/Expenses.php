@@ -108,7 +108,7 @@ a {
 
 </div>
 <div>
-    <a href="https://tms-production-65c4.up.railway.app/api/expense/receipt" class="btn btn-add" target="_blank" >
+    <a href="https://tms-portal.up.railway.app/api/expense/receipt" class="btn btn-add" target="_blank" >
     <i class="bx bx-printer font-size-18"></i> View All
     </a>
 </div>
@@ -274,7 +274,7 @@ $(document).ready(function(){
   
   $.ajax({
                 method:'GET',
-                url:'https://tms-production-65c4.up.railway.app/api/expense/getAll',
+                url:'https://tms-portal.up.railway.app/api/expense/getAll',
                 dataType:'json',
                 success:function(response){
     let title_select=$('#title');
@@ -310,7 +310,7 @@ $(document).ready(function(){
   console.log(formData)
   $.ajax({
             method:'POST',
-            url:'https://tms-production-65c4.up.railway.app/api/expense/save',
+            url:'https://tms-portal.up.railway.app/api/expense/save',
             dataType:'json',
             headers:{
                 'Content-Type':'application/json'
@@ -362,7 +362,7 @@ $(document).ready(function(){
 
     $.ajax({
         method: 'PUT', 
-        url: `https://tms-production-65c4.up.railway.app/api/expense/update/${id}`,
+        url: `https://tms-portal.up.railway.app/api/expense/update/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(formData),
@@ -399,7 +399,7 @@ $('#confirmDeleteBtn').click(function (e) {
 
     $.ajax({
         method: 'DELETE', 
-        url: `https://tms-production-65c4.up.railway.app/api/expense/delete/${id}`,
+        url: `https://tms-portal.up.railway.app/api/expense/delete/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         success: function (response) {
@@ -465,7 +465,7 @@ function loadexpense(page = 1)
  
   $.ajax({
             method:'GET',
-            url:`https://tms-production-65c4.up.railway.app/api/expense/get?page=${page}`,
+            url:`https://tms-portal.up.railway.app/api/expense/get?page=${page}`,
             dataType:'json',
             success:function(response){
             
@@ -503,7 +503,7 @@ function loadexpense(page = 1)
         </li>
 
          <li class="list-inline-item">
-        <a href="https://tms-production-65c4.up.railway.app/api/expense/receipt/${details.id}" 
+        <a href="https://tms-portal.up.railway.app/api/expense/receipt/${details.id}" 
            target="_blank" 
            class="px-2 text-primary" 
            title="Print Receipt">

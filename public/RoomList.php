@@ -307,7 +307,7 @@ $(document).ready(function(){
 
   $.ajax({
             method:'POST',
-            url:'https://tms-production-65c4.up.railway.app/api/room/save',
+            url:'https://tms-portal.up.railway.app/api/room/save',
             dataType:'json',
             headers:{
                 'Content-Type':'application/json'
@@ -356,7 +356,7 @@ $(document).ready(function(){
 
     $.ajax({
         method: 'PUT', 
-        url: `https://tms-production-65c4.up.railway.app/api/room/update/${id}`,
+        url: `https://tms-portal.up.railway.app/api/room/update/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         data: JSON.stringify(formData),
@@ -393,7 +393,7 @@ $('#confirmDeleteBtn').click(function (e) {
 
     $.ajax({
         method: 'DELETE', 
-        url: `https://tms-production-65c4.up.railway.app/api/room/delete/${id}`,
+        url: `https://tms-portal.up.railway.app/api/room/delete/${id}`,
         dataType: 'json',
         contentType: 'application/json',
         success: function (response) {
@@ -454,7 +454,7 @@ function loadRooms(page = 1)
  
   $.ajax({
             method:'GET',
-            url:`https://tms-production-65c4.up.railway.app/api/room/get?page=${page}`,
+            url:`https://tms-portal.up.railway.app/api/room/get?page=${page}`,
             dataType:'json',
             success:function(response){
               console.log(response.data.data)
