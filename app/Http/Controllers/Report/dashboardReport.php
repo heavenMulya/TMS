@@ -69,17 +69,13 @@ class dashboardReport extends Controller
     $unpaidThisMonth = Tenants::whereDate('lease_start', '<=', Carbon::now()->endOfMonth())
         ->whereDoesntHave('payments', function ($query) use ($thisMonth) {
             $query->where('month_paid_for', $thisMonth);
-        });
-
-    $unpaidLastMonth = Tenants::whereDate('lease_start', '<=', Carbon::now()->subMonth()->endOfMonth())
-        ->whereDoesntHave('payments', function ($query) use ($lastMonth) {
-            $query->where('month_paid_for', $lastMonth);
         })->get();
 
-    $data = [
-        'this_month' => $unpaidThisMonth,
-        'last_month' => $unpaidLastMonth
-    ];
+    /*$unpaidLastMonth = Tenants::whereDate('lease_start', '<=', Carbon::now()->subMonth()->endOfMonth())
+        ->whereDoesntHave('payments', function ($query) use ($lastMonth) {
+            $query->where('month_paid_for', $lastMonth);
+        })->get();*/
+
 
     return view('receipts.Unpaid_print', ['data' => $unpaidThisMonth]);
     }

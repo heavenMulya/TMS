@@ -207,7 +207,7 @@ a {
                   <div class="card-body">
                     <div class="d-sm-flex align-items-center mb-4">
                       <h4 class="card-title mb-sm-0">Unpaid Tenants Lists</h4>
-                      <a href="https://tms-portal.up.railway.app/api/report/receipt" class=" btn btn-success text-dark ms-auto mb-3 mb-sm-0"> View all Products</a>
+                      <a href="https://tms-portal.up.railway.app/api/report/receipt" class=" btn btn-success text-dark ms-auto mb-3 mb-sm-0"  target="_blank" > View all Products</a>
                     </div>
                     <div class="table-responsive">
                     <table class="table project-list-table table-nowrap align-middle table-borderless">
