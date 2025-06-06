@@ -59,11 +59,11 @@
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
                 <div class="dropdown-header text-center">
                   <img class="img-md rounded-circle" src="assets/images/faces/face8.jpg" alt="Profile image">
-                  <p class="mb-1 mt-3">Harryson</p>
-                  <p class="font-weight-light text-muted mb-0">Harryson@gmail.com</p>
+                  <p class="mb-1 mt-3" id="name">Harryson</p>
+                  <p class="font-weight-light text-muted mb-0" id="email">Harryson@gmail.com</p>
                 </div>
                 <a class="dropdown-item"><i class="dropdown-item-icon icon-user text-primary"></i> My Profile <span class="badge badge-pill badge-danger">1</span></a>
-                <a class="dropdown-item" href="login.php"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
+                <a class="dropdown-item" id="logout"><i class="dropdown-item-icon icon-power text-primary"></i>Sign Out</a>
               </div>
             </li>
           </ul>
@@ -92,3 +92,29 @@
     <!-- Custom js for this page -->
     <script src="assets/js/dashboard.js"></script>
     <!-- End custom js for this page -->
+
+        <script>
+      $(document).ready(function(){
+        const profileJson = localStorage.getItem('profile');
+        //console.log(localStorage.getItem('profile'))
+const profile = profileJson ? JSON.parse(profileJson) : null;
+if (!profile || profile == null) {
+     // window.location.href = 'https://tms-portal.up.railway.app/login.php';
+      return;
+    }
+    else{
+      console.log(profile.name)
+      $('#name').text(profile.name);
+     $('#email').text(profile.email);
+    }
+
+
+      $('#logout').on('click',function(e){
+        e.preventDefault();
+       // console.log('working')
+        localStorage.removeItem('profile');
+      // 2) Redirect back to login (or home)
+      window.location.href = 'https://tms-portal.up.railway.app/login.php';
+      })
+      })
+    </script>

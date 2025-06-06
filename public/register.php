@@ -137,6 +137,10 @@ $(document).ready(function(){
                 setTimeout(function(){
                     $('#success-alert').hide();
                 },3000);
+                  setTimeout(function(){
+               window.location.href = 'https://tms-portal.up.railway.app/login.php';
+                  },4000);
+
             },
             error:function(error){
                 $('#error-alert').show();
