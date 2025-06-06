@@ -53,7 +53,7 @@
           <h5 class="mb-0 font-weight-medium d-none d-lg-flex">Tenants Management System dashboard</h5>
           <ul class="navbar-nav navbar-nav-right">
         
-            <li class="nav-item dropdown d-none d-xl-inline-flex user-dropdown">
+            <li class="nav-item dropdown  user-dropdown">
               <a class="nav-link dropdown-toggle" id="UserDropdown" href="#" data-bs-toggle="dropdown" aria-expanded="false">
                 <img class="img-xs rounded-circle ms-2" src="assets/images/faces/face8.jpg" alt="Profile image"> <span class="font-weight-normal" id="name"> Harryson</span></a>
               <div class="dropdown-menu dropdown-menu-right navbar-dropdown" aria-labelledby="UserDropdown">
